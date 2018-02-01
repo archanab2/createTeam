@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+<title></title>
+<link rel="stylesheet" href=""/>
+<link rel="stylesheet" href=""/>
+<link rel="stylesheet" href=""/>
+<script src="bootstrap4/js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+
+  var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  $scope.playerList= [
+   {
+            "ID" : "Alfreds Futterkiste",
+            "Name" : "Germany",
+			"BasePrice" : "40L"
+        },
+		{
+            "ID" : "Alfreds Futterkiste",
+            "Name" : "Germany",
+			"BasePrice" : "40L"
+        },
+		{
+            "ID" : "Alfreds Futterkiste",
+            "Name" : "Germany",
+			"BasePrice" : "40L"
+        },
+		{
+            "ID" : "Alfreds Futterkiste",
+            "Name" : "Germany",
+			"BasePrice" : "40L"
+        },
+		{
+            "ID" : "Alfreds Futterkiste",
+            "Name" : "Germany",
+			"BasePrice" : "40L"
+        }
+		]
+		$scope.removeTask = function(taskId){
+	angular.element(document.querySelector(".card")).addClass('bew');
+  //  alert("Task Id is "+taskId);
+  };
+});
+</script>
+<style>
+.card{
+	height: 150px;
+	width: 150px;
+	background-color: lightgrey;
+	border: 1px solid #000;
+	float: left;
+}
+
+
+</style>
+</head>
+
+<body  ng-app="myApp" ng-controller="myCtrl">
+
+<div>
+<label>Player</label>
+<!--
+<select id="team_a">
+<option>--SELECT--</option>
+<option ng-repeat="x in playerList" ng-model="firstname">{{x.Name}}</option></select>
+<table>
+<div>{{firstname}}</div>
+</table>-->
+<div class="card" ng-repeat="x in playerList" ng-click="removeTask(x.ID);">{{x.Name}}</div>
+</div>
+
+<button class="create">Create Team</button>
+</body>
+
+</html>
