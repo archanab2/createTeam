@@ -5,6 +5,7 @@
 <link rel="stylesheet" href=""/>
 <link rel="stylesheet" href=""/>
 <script src="bootstrap4/js/bootstrap.js"></script>
+<script src="jquery-3.3.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script>
 
@@ -14,33 +15,64 @@ app.controller("myCtrl", function($scope) {
    {
             "ID" : "Alfreds Futterkiste",
             "Name" : "Germany",
-			"BasePrice" : "40L"
+			"BasePrice" : "41L",
+			"Achievement" : "20 century"
         },
 		{
             "ID" : "Alfreds Futterkiste",
             "Name" : "Germany",
-			"BasePrice" : "40L"
+			"BasePrice" : "70L",
+			"Achievement" : "21 century"
         },
 		{
             "ID" : "Alfreds Futterkiste",
             "Name" : "Germany",
-			"BasePrice" : "40L"
+			"BasePrice" : "43L",
+			"Achievement" : "22 century"
         },
 		{
             "ID" : "Alfreds Futterkiste",
             "Name" : "Germany",
-			"BasePrice" : "40L"
+			"BasePrice" : "50L",
+			"Achievement" : "23 century"
         },
 		{
             "ID" : "Alfreds Futterkiste",
             "Name" : "Germany",
-			"BasePrice" : "40L"
+			"BasePrice" : "60L",
+			"Achievement" : "24 century"
         }
 		]
-		$scope.removeTask = function(taskId){
-	angular.element(document.querySelector(".card")).addClass('bew');
+		
+		  $scope.newItem = (function(data) {
+    $scope.playerList = data.contentData;
+    
+    $scope.ID = [];
+    $scope.Name = [];
+	$scope.BasePrice = [];
+	$scope.Achievement = [];
+    
+    angular.forEach(data.contentData, function(demoContent, index){
+
+      angular.forEach(demoContent.ID, function(idGroup, index){
+        $scope.ID.push(idGroup);
+
+        });
+    });
+    
+
+  
+  
+		$scope.removeTask = function(event, content){
+		angular.element('.card').removeClass('active');
+		angular.element(event.target).addClass('active');
+		 $scope.useContent = content;
+	//	angular.element(document.querySelector(".card")).removeClass('bew');
+		//taskId.addClass('bew');
+//	angular.element(document.querySelector(".card")[taskId]).addClass('bew');
   //  alert("Task Id is "+taskId);
   };
+    });
 });
 </script>
 <style>
@@ -52,6 +84,14 @@ app.controller("myCtrl", function($scope) {
 	float: left;
 }
 
+.active{
+	background-color: yellow;
+	border-radius: 5px;
+	width: 180px;
+	height: 180px;
+	margin-right: 10px; 
+	<!-- can use animate instead -->
+}
 
 </style>
 </head>
@@ -67,9 +107,11 @@ app.controller("myCtrl", function($scope) {
 <table>
 <div>{{firstname}}</div>
 </table>-->
-<div class="card" ng-repeat="x in playerList" ng-click="removeTask(x.ID);">{{x.Name}}</div>
+<div class="card" ng-repeat="x in playerList" ng-click="removeTask($event);">{{x.Name}}</div>
 </div>
-
+<div class="playerDetails" ng-repeat= "ID in useContent">
+<span> Id: {{x.ID}}</span>
+</div>
 <button class="create">Create Team</button>
 </body>
 

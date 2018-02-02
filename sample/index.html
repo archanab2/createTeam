@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html ng-app>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+<div ng-controller="AppController">
+
+  <ul class="list-unstyled">
+    <li ng-repeat="content in contentSets" ng-click="setContent(content)">
+      <a href="#">{{content.name}}</a></li>
+  </ul>
+  
+  <h1>{{useContent.contentTitle}}</h1>
+  
+  <!-- 
+    PROBLEM AREA:
+    displays ALL headlines, 
+    I want to display JUST headlines from the clicked content sets
+  -->
+  
+  <ul class="list-unstyled" ng-repeat="news in useContent.news">
+    <li ng-repeat="headline in news.headlines">
+      {{headline.title}}
+    </li>
+  </ul>
+  
+</div>
+
+</body>
+</html>

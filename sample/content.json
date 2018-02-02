@@ -1,0 +1,78 @@
+{
+  "contentData": [
+    
+    {
+        "contentId": 1,
+        "name": "Content set 1",
+        "contentTitle": "Pretaining to content set 1",
+        "news": [
+            {
+              "headlineSet": 1,
+              "headlines": [
+                  {
+                    "title": "headline 1 (set 1)",
+                    "date": "date for headline 1 (set 1)"
+                  },
+                  {
+                    "title": "headline 2 (set 1)",
+                    "date": "date for headline 2 (set 1)"
+                  },
+                  {
+                    "title": "headline 3 (set 1)",
+                    "date": "date for headline 3 (set 1)"
+                  }
+                ]
+            }
+        ]
+        
+    },
+    {
+        "contentId": 2,
+        "name": "Content set 2",
+        "contentTitle": "Pretaining to content set 2",
+        "news": [
+            {
+              "headlineSet": 1,
+              "headlines": [
+                  {
+                    "title": "headline 1 (set 2)",
+                    "date": "date for headline 1 (set 2)"
+                  },
+                  {
+                    "title": "headline 2 (set 2)",
+                    "date": "date for headline 2 (set 2)"
+                  },
+                  {
+                    "title": "headline 3 (set 2)",
+                    "date": "date for headline 3 (set 2)"
+                  }
+                ]
+            }
+        ]
+    },
+    {
+        "contentId": 3,
+        "name": "Content set 3",
+        "contentTitle": "Pretaining to content set 3",
+        "news": [
+            {
+              "headlineSet": 1,
+              "headlines": [
+                  {
+                    "title": "headline 1 (set 3)",
+                    "date": "date for headline 1 (set 3)"
+                  },
+                  {
+                    "title": "headline 2 (set 3)",
+                    "date": "date for headline 2 (set 3)"
+                  },
+                  {
+                    "title": "headline 3 (set 3)",
+                    "date": "date for headline 3 (set 3)"
+                  }
+                ]
+            }
+        ]
+    }
+  ]
+}
